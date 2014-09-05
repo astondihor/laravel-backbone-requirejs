@@ -1,0 +1,78 @@
+{
+	"name": "laravel/laravel",
+	"description": "The Laravel Framework.",
+	"keywords": ["framework", "laravel"],
+	"license": "MIT",
+	"require": {
+		"laravel/framework": "4.2.*",
+		"jasonlewis/expressive-date": "v1.0.2",
+		"bllim/datatables": "v1.3.5",
+		"j20/php-uuid": "dev-master",
+		"zizaco/confide": "dev-master",
+		"zizaco/entrust": "dev-master",
+		"nitmedia/wkhtml2pdf": "dev-master",
+		"wisembly/excelant": "1.0.2",
+		"teepluss/theme": "v1.1.2",
+		"edvinaskrucas/notification": "2.0.2",
+		"mustache/mustache": "dev-master",
+		"michelf/php-markdown": "1.4.1",
+		"intervention/image": "2.0.5",
+		"maatwebsite/excel": "v1.1.5",
+        "conarwelsh/mustache-l4": "dev-master"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.2.4",
+		"mockery/mockery": "0.9.1",
+		"way/generators": "3",
+		"way/laravel-test-helpers": "dev-master",
+		"way/phpunit-wrappers": "dev-master",
+		"way/database": "dev-master",
+		"way/form": "dev-master",
+		"barryvdh/laravel-ide-helper": "v1.10.0",
+		"zizaco/factory-muff": "1.5.2",
+		"codeception/aspect-mock": "0.4.2",
+		"barryvdh/laravel-debugbar": "v1.6.6",
+		"phpspec/phpspec": "2.0.1",
+		"behat/behat": "v3.0.12",
+		"fzaninotto/faker": "v1.4.0"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php",
+			"app/repositories",
+			"app/library"
+		],
+		"files": [
+			"app/helpers.php",
+			"app/errors.php"
+		],
+		"psr-0": {
+			"MYAPP": "app/"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan ide-helper:generate",
+			"php artisan debugbar:publish",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist",
+		"bin-dir": "bin/"
+	},
+	"minimum-stability": "stable"
+}
